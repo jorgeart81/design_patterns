@@ -1,3 +1,8 @@
+use crate::factory_method::init::initialize;
+
+mod factory_method;
+
 fn main() {
-    println!("Hello, world!");
+    let restaurant = initialize();
+    restaurant.order_hamburger();
 }
