@@ -1,5 +1,5 @@
 use crate::builder::{
-    builders::{Builder, CarBuilder, CarManualBuilder},
+    builders::{Builder, CarBuilder, CarManualBuilder, ComputerBuilder},
     cars::{Car, Manual},
     director::Director,
 };
@@ -7,6 +7,7 @@ use crate::builder::{
 mod builders;
 mod cars;
 mod components;
+mod computers;
 mod director;
 
 pub fn run_builder() {
@@ -31,4 +32,13 @@ pub fn run_builder() {
     // The final car manual.
     let manual: Manual = manual_builder.build();
     println!("Car manual built:\n{}", manual);
+
+    let computer = ComputerBuilder::default()
+        .set_cpu("Intel I9 Core Ultra")
+        .set_ram("32GB")
+        .set_storage("256GB")
+        .set_gpu("RTX 4049")
+        .build();
+
+    println!("Computer built:\n{}", computer);
 }

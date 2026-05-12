@@ -1,5 +1,6 @@
 mod car;
 mod car_manual;
+mod computer;
 
 use crate::builder::components::{CarType, Engine, GpsNavigator, Transmission};
 
@@ -16,3 +17,4 @@ pub trait Builder {
 
 pub use car::CarBuilder;
 pub use car_manual::CarManualBuilder;
+pub use computer::ComputerBuilder;
