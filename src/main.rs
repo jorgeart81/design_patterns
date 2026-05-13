@@ -1,10 +1,11 @@
 use std::io;
 
-use crate::{adapter::run_adapter, builder::run_builder, factory_method::run_factory_method};
+use crate::{adapter::run_adapter, builder::run_builder, factory_method::run_factory_method, prototype::run_prototype};
 
 mod adapter;
 mod builder;
 mod factory_method;
+mod prototype;
 
 fn main() {
     loop {
@@ -12,7 +13,8 @@ fn main() {
         println!("1. Adapter");
         println!("2. Builder");
         println!("3. Factory Method");
-        println!("4. Salir");
+        println!("4. Prototype");
+        println!("5. Salir");
         println!("==================================");
         println!("Selecciona una opción: ");
 
@@ -27,7 +29,8 @@ fn main() {
             "1" | "adapter" => run_adapter(),
             "2" | "builder" => run_builder(),
             "3" | "factory_method" => run_factory_method(),
-            "4" | "exit" | "salir" => {
+            "4" | "prototype" => run_prototype(),
+            "5" | "exit" | "salir" => {
                 println!("¡Hasta luego!");
                 break;
             }
